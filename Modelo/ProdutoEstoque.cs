@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Modelo
 {
-    public class ProdutoEstoque
+    public partial class ProdutoEstoque
     {
-        public Empresa Empresa { get; set; }
-        public Produto Produto { get; set; }
+        public int Id { get; set; }
+        public int IdProduto { get; set; }
+        public int IdEmpresa { get; set; }
         public int Estoque { get; set; }
 
-        public ProdutoEstoque(Empresa empresa, Produto produto, int estoque)
-        {
-            this.Empresa = empresa;
-            this.Produto = produto;
-            this.Estoque = estoque;
-        }
-
-        public ProdutoEstoque() { }
+        public virtual Empresa IdEmpresaNavigation { get; set; }
+        public virtual Produto IdProdutoNavigation { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
+using Modelo;
 
 namespace Persistencia
 {
@@ -24,10 +25,10 @@ namespace Persistencia
             Configuration = builder.Build();
         }
 
-        public virtual DbSet<TbEmpresa> TbEmpresa { get; set; }
-        public virtual DbSet<TbProduto> TbProduto { get; set; }
-        public virtual DbSet<TbProdutoEstoque> TbProdutoEstoque { get; set; }
-        public virtual DbSet<TbProdutoMovimentacao> TbProdutoMovimentacao { get; set; }
+        public virtual DbSet<Modelo.Empresa> Empresa { get; set; }
+        public virtual DbSet<Modelo.Produto> Produto { get; set; }
+        public virtual DbSet<Modelo.ProdutoEstoque> ProdutoEstoque { get; set; }
+        public virtual DbSet<Modelo.ProdutoMovimentacao> ProdutoMovimentacao { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -41,7 +42,7 @@ namespace Persistencia
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
 
-            modelBuilder.Entity<TbEmpresa>(entity =>
+            modelBuilder.Entity<Modelo.Empresa>(entity =>
             {
                 entity.ToTable("tb_empresa");
 
@@ -57,7 +58,7 @@ namespace Persistencia
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<TbProduto>(entity =>
+            modelBuilder.Entity<Produto>(entity =>
             {
                 entity.ToTable("tb_produto");
 
@@ -71,7 +72,7 @@ namespace Persistencia
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<TbProdutoEstoque>(entity =>
+            modelBuilder.Entity<ProdutoEstoque>(entity =>
             {
                 entity.HasKey(e => e.Id)
                     .HasName("PK_tb_produto_estoque_Id")
@@ -96,7 +97,7 @@ namespace Persistencia
                     .HasConstraintName("FK_tb_produto_estoque_IdProduto");
             });
 
-            modelBuilder.Entity<TbProdutoMovimentacao>(entity =>
+            modelBuilder.Entity<ProdutoMovimentacao>(entity =>
             {
                 entity.ToTable("tb_produto_movimentacao");
 

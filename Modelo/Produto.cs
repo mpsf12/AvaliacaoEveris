@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Modelo
 {
-    public class Produto
+    public partial class Produto
     {
-        public string NomeProduto { get; set; }
-
-        public Produto(string nomeProduto)
+        public Produto()
         {
-            this.NomeProduto = nomeProduto;
+            TbProdutoEstoque = new HashSet<ProdutoEstoque>();
+            TbProdutoMovimentacao = new HashSet<ProdutoMovimentacao>();
         }
 
-        public Produto() { }
+        public int Id { get; set; }
+        public string NomeProduto { get; set; }
+
+        public virtual ICollection<ProdutoEstoque> TbProdutoEstoque { get; set; }
+        public virtual ICollection<ProdutoMovimentacao> TbProdutoMovimentacao { get; set; }
     }
 }
