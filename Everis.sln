@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EverisAPI", "EverisAPI\Ever
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Util", "Util\Util.csproj", "{762B2F01-ACBB-4B28-8CE7-E5342E6801FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{FD1BBCB0-1C6D-4978-B911-57A69F491D73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelo", "Modelo\Modelo.csproj", "{FD1BBCB0-1C6D-4978-B911-57A69F491D73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controle", "Controle\Controle.csproj", "{6B758B27-BF34-443E-92D7-837613A079C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{F784EF15-5326-402C-81CC-12645B3C1F72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{FD1BBCB0-1C6D-4978-B911-57A69F491D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD1BBCB0-1C6D-4978-B911-57A69F491D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD1BBCB0-1C6D-4978-B911-57A69F491D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B758B27-BF34-443E-92D7-837613A079C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B758B27-BF34-443E-92D7-837613A079C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B758B27-BF34-443E-92D7-837613A079C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B758B27-BF34-443E-92D7-837613A079C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F784EF15-5326-402C-81CC-12645B3C1F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F784EF15-5326-402C-81CC-12645B3C1F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F784EF15-5326-402C-81CC-12645B3C1F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F784EF15-5326-402C-81CC-12645B3C1F72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
