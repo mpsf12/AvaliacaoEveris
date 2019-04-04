@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Everis", "Everis\Everis.csproj", "{27E948F4-E29F-4D74-9B09-1E734CEC0177}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EverisAPI", "EverisAPI\EverisAPI.csproj", "{F937F4DE-53C3-4C2C-9286-14BC9E9BF9CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Util", "Util\Util.csproj", "{762B2F01-ACBB-4B28-8CE7-E5342E6801FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{FD1BBCB0-1C6D-4978-B911-57A69F491D73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27E948F4-E29F-4D74-9B09-1E734CEC0177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E948F4-E29F-4D74-9B09-1E734CEC0177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E948F4-E29F-4D74-9B09-1E734CEC0177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E948F4-E29F-4D74-9B09-1E734CEC0177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F937F4DE-53C3-4C2C-9286-14BC9E9BF9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F937F4DE-53C3-4C2C-9286-14BC9E9BF9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F937F4DE-53C3-4C2C-9286-14BC9E9BF9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F937F4DE-53C3-4C2C-9286-14BC9E9BF9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{762B2F01-ACBB-4B28-8CE7-E5342E6801FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762B2F01-ACBB-4B28-8CE7-E5342E6801FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762B2F01-ACBB-4B28-8CE7-E5342E6801FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762B2F01-ACBB-4B28-8CE7-E5342E6801FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD1BBCB0-1C6D-4978-B911-57A69F491D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD1BBCB0-1C6D-4978-B911-57A69F491D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD1BBCB0-1C6D-4978-B911-57A69F491D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD1BBCB0-1C6D-4978-B911-57A69F491D73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23D17819-0B44-43DE-8850-0E08D22B689F}
+	EndGlobalSection
+EndGlobal
