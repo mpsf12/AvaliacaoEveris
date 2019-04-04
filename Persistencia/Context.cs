@@ -1,28 +1,28 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.Configuration;
 using Modelo;
 
 namespace Persistencia
 {
     public partial class Context : DbContext
     {
-        public IConfiguration Configuration { get; set; }
+        //public IConfiguration Configuration { get; set; }
 
         public Context()
         {
-            var builder = new ConfigurationBuilder()
-            .AddJsonFile("appSettings.json");
-            Configuration = builder.Build();
+            //var builder = new ConfigurationBuilder()
+            //.AddJsonFile("appSettings.json");
+            //Configuration = builder.Build();
         }
 
         public Context(DbContextOptions<Context> options)
             : base(options)
         {
-            var builder = new ConfigurationBuilder()
-            .AddJsonFile("AppSettings.json");
-            Configuration = builder.Build();
+            //var builder = new ConfigurationBuilder()
+            //.AddJsonFile("AppSettings.json");
+            //Configuration = builder.Build();
         }
 
         public virtual DbSet<Modelo.Empresa> Empresa { get; set; }
@@ -34,7 +34,7 @@ namespace Persistencia
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Configuration["connectionString"]);
+                optionsBuilder.UseSqlServer("Server=tcp:marcioserafim.database.windows.net,1433;Initial Catalog=Everis;Persist Security Info=False;User ID=marcio;Password=M@rcio3265977;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             }
         }
 
