@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Modelo;
 
 namespace Controle
@@ -11,6 +13,11 @@ namespace Controle
         public new Modelo.ProdutoEstoque GetById(int id)
         {
             return _dbContext.ProdutoEstoque.FirstOrDefault(e => e.Id == id);
+        }
+
+        public new async Task<Modelo.ProdutoEstoque> GetByIdAsync(int id)
+        {
+            return await _dbContext.ProdutoEstoque.FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public List<Modelo.ProdutoEstoque> EstoquePorEmpresa(Modelo.Empresa empresa)

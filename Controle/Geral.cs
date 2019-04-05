@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -28,15 +29,32 @@ namespace Controle
             Delete(entity);
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var entity = GetById(id);
+            await DeleteAsync(entity);
+        }
+
         public void Delete(T entity)
         {
             _dbContext.Set<T>().Remove(entity);
             _dbContext.SaveChanges();
         }
 
+        public async Task DeleteAsync(T entity)
+        {
+            _dbContext.Set<T>().Remove(entity);
+            await _dbContext.SaveChangesAsync();
+        }
+
         public IQueryable<T> GetAll()
         {
             return _dbContext.Set<T>();
+        }
+
+        public async Task<IQueryable<T>> GetAllAsync()
+        {
+            return (IQueryable<T>) (await _dbContext.Set<T>().ToListAsync());
         }
 
         public IQueryable<T> Get(Expression<Func<T, bool>> predicate)
@@ -54,10 +72,16 @@ namespace Controle
             throw new NotImplementedException();
         }
 
+        public Task<T> GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(T entity)
         {
             _dbContext.Set<T>().Update(entity);
             _dbContext.SaveChanges();
         }
+
     }
 }

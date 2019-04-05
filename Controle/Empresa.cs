@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,11 @@ namespace Controle
         public new Modelo.Empresa GetById(int id)
         {
             return _dbContext.Empresa.FirstOrDefault(e => e.Id == id);
+        }
+
+        public new async Task<Modelo.Empresa> GetByIdAsync(int id)
+        {
+            return await _dbContext.Empresa.FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public void Salvar(Modelo.Empresa empresa)

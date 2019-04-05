@@ -102,14 +102,18 @@ namespace Util
             return dados;
         }
 
-        public string PostObject(string url, object obj, string authorization = null)
+        public string PostObject(string url, object obj, string metodo = null, string authorization = null)
         {
             string urlRequisicao = strUrlBase + url;
             HttpClient client = new HttpClient();
             try
             {
                 HttpWebRequest request = HttpWebRequest.CreateHttp(urlRequisicao);
-                request.Method = "POST";
+
+                if (string.IsNullOrEmpty(metodo))
+                    request.Method = metodo;
+                else request.Method = "POST";
+
                 request.ContentType = "application/json";
                 if (!string.IsNullOrEmpty(authorization))
                     request.Headers.Add(HttpRequestHeader.Authorization, authorization);

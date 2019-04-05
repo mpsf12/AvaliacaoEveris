@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -123,12 +125,15 @@ namespace EverisAPI.Controllers
             controle.Salvar(produtoEstoque);
         }
 
+        //Talvez colocar httpResponseMessage em todos os métodos?
         [Route("ProdutoMovimentacao")]
         [HttpDelete]
-        public void DeleteProdutoMovimentacao([FromBody] Modelo.ProdutoEstoque produtoEstoque)
+        public HttpResponseMessage DeleteProdutoMovimentacao([FromBody] Modelo.ProdutoEstoque produtoEstoque)
         {
             Controle.ProdutoEstoque controle = new Controle.ProdutoEstoque();
             controle.Delete(produtoEstoque);
+            
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }

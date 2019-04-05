@@ -7,18 +7,9 @@ namespace Everis
     {
         static void Main(string[] args)
         {
-
-            var teste = new Controle.Empresa();
-
-            var lol = teste.GetAll().ToList();
-
-            var yea = teste.GetById(3);
-
             Conta c = new ContaCorrente();
             Cliente titular = new Cliente("victor");
             ContaExtensions.MudaTitular(c, titular);
-
-            Console.WriteLine("Hello World!");
         }
     }
 

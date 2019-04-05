@@ -12,6 +12,8 @@ namespace Controle
 
         T GetById(int id);
 
+        Task<T> GetByIdAsync(int id);
+
         void Create(T entity);
 
         void Update(T entity);
