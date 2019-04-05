@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,6 +37,16 @@ namespace Controle
         public IQueryable<T> GetAll()
         {
             return _dbContext.Set<T>();
+        }
+
+        public IQueryable<T> Get(Expression<Func<T, bool>> predicate)
+        {
+            return _dbContext.Set<T>().Where(predicate);
+        }
+
+        public T GetFirst(Expression<Func<T, bool>> predicate)
+        {
+            return _dbContext.Set<T>().FirstOrDefault(predicate);
         }
 
         public T GetById(int id)

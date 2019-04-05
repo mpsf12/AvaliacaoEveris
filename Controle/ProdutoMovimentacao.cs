@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Modelo;
 
 namespace Controle
 {
-    class ProdutoMovimentacao : Geral<Modelo.Empresa>, IGeral<Modelo.Empresa>
+    public class ProdutoMovimentacao : Geral<Modelo.ProdutoMovimentacao>, IGeral<Modelo.ProdutoMovimentacao>
     {
         public new Modelo.ProdutoMovimentacao GetById(int id)
         {
@@ -25,6 +26,13 @@ namespace Controle
         public List<Modelo.ProdutoMovimentacao> ManutencaoPorEmpresa(int idEmpresa)
         {
             return _dbContext.ProdutoMovimentacao.Where(x => x.IdEmpresa == idEmpresa).ToList();
+        }
+
+        public void Salvar(Modelo.ProdutoMovimentacao produtoEstoque)
+        {
+            if (produtoEstoque.Id == 0)
+                Create(produtoEstoque);
+            else Update(produtoEstoque);
         }
     }
 }

@@ -12,5 +12,12 @@ namespace Controle
         {
             return _dbContext.Empresa.FirstOrDefault(e => e.Id == id);
         }
+
+        public void Salvar(Modelo.Empresa empresa)
+        {
+            if (empresa.Id == 0)
+                Create(empresa);
+            else Update(empresa);
+        }
     }
 }
