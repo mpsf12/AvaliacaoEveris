@@ -1,0 +1,45 @@
+﻿@page
+@model View.Pages.NewFolder.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>ProdutoEstoque</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProdutoEstoque.Id" />
+            <div class="form-group">
+                <label asp-for="ProdutoEstoque.IdProduto" class="control-label"></label>
+                <select asp-for="ProdutoEstoque.IdProduto" class="form-control" asp-items="ViewBag.IdProduto"></select>
+                <span asp-validation-for="ProdutoEstoque.IdProduto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoEstoque.IdEmpresa" class="control-label"></label>
+                <select asp-for="ProdutoEstoque.IdEmpresa" class="form-control" asp-items="ViewBag.IdEmpresa"></select>
+                <span asp-validation-for="ProdutoEstoque.IdEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoEstoque.Estoque" class="control-label"></label>
+                <input asp-for="ProdutoEstoque.Estoque" class="form-control" />
+                <span asp-validation-for="ProdutoEstoque.Estoque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Details" asp-route-id="ProdutoEstoque.IdEmpresa" class="btn btn-primary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

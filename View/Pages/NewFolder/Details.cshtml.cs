@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Modelo;
 using Persistencia;
 
-namespace View.Pages.Empresa
+namespace View.Pages.NewFolder
 {
     public class DetailsModel : PageModel
     {
@@ -19,8 +19,7 @@ namespace View.Pages.Empresa
             _context = context;
         }
 
-        public Modelo.Empresa Empresa { get; set; }
-        public IList<ProdutoEstoque> ProdutoEstoque { get; set; }
+        public ProdutoEstoque ProdutoEstoque { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,22 +28,14 @@ namespace View.Pages.Empresa
                 return NotFound();
             }
 
-            Empresa = await _context.Empresa.FirstOrDefaultAsync(m => m.Id == id);
+            ProdutoEstoque = await _context.ProdutoEstoque
+                .Include(p => p.IdEmpresaNavigation)
+                .Include(p => p.IdProdutoNavigation).FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Empresa == null)
+            if (ProdutoEstoque == null)
             {
                 return NotFound();
             }
-
-            ProdutoEstoque = await _context.ProdutoEstoque
-                .Include(p => p.IdEmpresaNavigation)
-                .Include(p => p.IdProdutoNavigation).Where(x => x.IdEmpresa == id).ToListAsync();
-
-            if(ProdutoEstoque == null)
-            {
-                ProdutoEstoque = new List<ProdutoEstoque>();
-            }
-
             return Page();
         }
     }
