@@ -1,12 +1,17 @@
 ﻿@page
-@model View.Pages.IndexModel
+@model View.Pages.Empresa.MovimentacaoModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Movimentacões";
 }
 
-<h2>Index</h2>
+<h2>Movimentacões</h2>
 
+<p>
+    @*<a asp-page="Create">Create New</a>*@
+    @*<a asp-page="./Details" asp-route-id="@Model.Empresa" class="btn btn-info">Details</a>*@
+    <a asp-page="./Details" asp-route-id="@Model.Empresa.Id" class="btn btn-primary">Voltar</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -17,10 +22,7 @@
                 @Html.DisplayNameFor(model => model.ProdutoMovimentacao[0].Data)
             </th>
             <th>
-                Empresa
-            </th>
-            <th>
-               Produto
+                Produto
             </th>
             <th></th>
         </tr>
@@ -33,9 +35,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Data)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEmpresaNavigation.NomeEmpresa)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdProdutoNavigation.NomeProduto)

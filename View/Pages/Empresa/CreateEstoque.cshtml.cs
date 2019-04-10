@@ -59,7 +59,7 @@ namespace View.Pages.Empresa
             });
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPagePermanent("./Index");
         }
     }
 }

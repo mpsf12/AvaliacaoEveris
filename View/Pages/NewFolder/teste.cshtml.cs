@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using Modelo;
 using Persistencia;
 
-namespace View.Pages
+namespace View.Pages.NewFolder
 {
-    public class IndexModel : PageModel
+    public class testeModel : PageModel
     {
         private readonly Persistencia.Context _context;
 
-        public IndexModel(Persistencia.Context context)
+        public testeModel(Persistencia.Context context)
         {
             _context = context;
         }
